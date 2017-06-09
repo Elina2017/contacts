@@ -1,0 +1,67 @@
+
+	import java.util.ArrayList;
+import java.util.ArrayList;
+
+	public class mobilephone {
+
+		public ArrayList<String> name = new ArrayList<String>();
+
+		public ArrayList<Integer> contact = new ArrayList<Integer>();
+		public void addTomobile(String item , Integer items) {
+			name.add(item);
+			contact.add(items);
+
+		}
+
+		public void printArraylist() {
+			System.out.println("you have " + name.size() +contact.size()+ " elements in list!");
+			for (int i = 0; i < name.size(); i++) {
+				System.out.println(i + 1 + "." + name.get(i));
+				System.out.println(i + 1 + "." + contact.get(i));
+			}
+		}
+
+		public void modifyItem(int pos, String newItem , Integer newItems) {
+			name.set(pos, newItem);
+			System.out.println("Grocery Item" + pos + 1 + "  Modified");
+			contact.set(pos, newItems);
+			System.out.println("Grocery Item" + pos + 1 + "  Modified");
+		}
+
+		public void removeElement(int pos , String poses) {
+		
+			name.remove(poses);
+			contact.remove(pos);
+
+		}
+
+		public String findElement(int item , int items) {
+			int position = name.indexOf(item);
+			int positions = contact.indexOf(item);
+			
+			if (position >= 0) {
+				return name.get(item) + contact.get(items);
+			}
+
+			return null;
+
+		}
+
+		public void addToMobile(String nextLine) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public void removeElement(int i) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public Object findElement(String searchItem) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
+	}
+
+

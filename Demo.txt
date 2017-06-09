@@ -1,0 +1,104 @@
+
+import java.util.Scanner;
+
+
+public class Demo {
+private static Scanner s = new Scanner(System.in);
+
+ private static mobilephone m = new mobilephone();
+
+		public static void main(String[] args) {
+		boolean quit = false;
+		int choise =0 ;
+		printinstructions();
+	
+		while(!quit){
+			System.out.println("Enter your choise!");
+			 choise = s.nextInt();
+	         s.nextLine();
+	switch (choise){
+	case 0:
+		printinstructions();
+		break;
+	case 1:
+	      m.printArraylist();
+		break;
+	case 2:
+		addItem();
+		break;
+	
+	
+	case 3:
+		modifyItem();
+		break;
+	case 4:
+		removeItem();
+		break;
+	case 5:
+		searchItem();
+		break;
+	case 6 :
+		quit = true;
+		break;
+		}
+		
+	
+		
+		}
+	}
+  public static void printinstructions(){
+	  System.out.println("\n");
+	  System.out.println("\t press 0 to print choise option.");
+	  System.out.println("\t press 1 to print list of grocery list.");
+	  System.out.println("\t press 2 to add item in list.");
+	  System.out.println("\t press 3 to modify an item in list");
+	  System.out.println("\t press 4 to remove item from list");
+	  System.out.println("\t press 5 to search an item in the list ");
+	  System.out.println("\t press 6 to quit the app");
+  }
+  public static void addItem(){
+	  System.out.println("please enter the name");
+	  m.addToMobile(s.nextLine());
+	  System.out.println("please enter the contact");
+	  m.addToMobile(s.nextLine());
+  }
+  public static void modifyItem (){
+	  System.out.println("please enter the Item Name");
+	  int itemNo = s.nextInt();
+	  s.nextLine();
+	  System.out.println(" enter replacement name");
+	  String newItem = s.nextLine();
+	  m.modifyItem(itemNo-1 , newItem, itemNo); 
+	  System.out.println("please enter the contact");
+	  int itemNo1 = s.nextInt();
+	  s.nextLine();
+	  System.out.println(" enter replacement contact");
+	  String newItem1 = s.nextLine();
+	  m.modifyItem(itemNo-1 , newItem, itemNo1);
+  }
+  public static void removeItem(){
+	  System.out.println("please enter the  Name");
+	  int itemNo = s.nextInt();
+	  
+	  m.removeElement(itemNo-1);
+	  System.out.println("please enter the  Name");
+	  int itemNo1 = s.nextInt();
+	  
+	  m.removeElement(itemNo-1);
+  }
+  
+  public static void searchItem(){
+	  System.out.println("please enter  the name to search");
+	   String searchItem = s.nextLine();
+	   String searchItem1 = s.nextLine();
+	   if(m.findElement(searchItem) != null){
+		   System.out.println("Element found"+searchItem);
+		   
+	   }else{
+		   System.out.println("The element not found");
+		   
+	   }
+  
+	
+}
+}
